@@ -1,0 +1,66 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Header börjar här*/
+#Header{
+  text-align: center;
+  background-color: rgb(56, 56, 56);
+  padding: 2em 0.2em;
+}
+
+#Header > h1{
+  color: white;
+  font-size: 26px;
+  padding-bottom: 1em;
+}
+
+.hitta-poke{
+  border: none;
+  padding: 0.5em 0.2em;
+  background-color: rgb(159, 13, 13);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hitta-poke:hover{
+  background-color: grey;
+}
+/*Header slutar här*/
+
+
+/* input för sök pokemon diven börjar här */
+.input-div{
+  margin-top: 1em;
+  text-align: center;
+}
+
+#sök-pokemon{
+margin-left: 0.5em;
+font-size: 22px;
+padding: 0.2em;
+background-color:#747474 ;
+color: white;
+border-radius: 10px;
+border: none;
+}
+
+
+
+::placeholder{
+  color: #BDBCBC;
+  padding-left: 0.6em;
+}
+
+
+
+.fas{
+  position: relative;
+  right: 1.8em;
+  font-size: 22px;
+  color: #BDBCBC;
+}
