@@ -34,16 +34,19 @@
 
 
 /* input för sök pokemon diven börjar här */
+
 .input-div{
   margin-top: 1em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #sök-pokemon{
-margin-left: 0.5em;
 font-size: 22px;
 padding: 0.2em;
-background-color:#747474 ;
+background-color:#383838;
 color: white;
 border-radius: 10px;
 border: none;
@@ -75,18 +78,51 @@ border: none;
   font-size: 20px;
 }
 
+/* pokemon figur börjar här*/
+.wrapper, .wrapper2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
 
-#pokemon-container{
-  border: 2px solid orange;
+}
+.pokemon-container{
+  padding: 2em 2em;
+  border: 2px solid #9F0D0D;
+  border-radius: 20px;
+  background:  linear-gradient(-150deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
   margin-top: 1em;
   gap: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
+  color: white;
 }
 
 img{
   text-align: center;
   width: 150px;
+}
+
+.lägg-till-pokebtn{
+  font-size: 20px;
+  padding: 0.5em 0.5em;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(10deg, rgb(30, 10, 15) 5%, rgb(166, 11, 11) 35%, rgb(17, 2, 2) 100%) ;
+  color: white;
+  cursor: pointer;
+}
+
+/*sida 2*/
+
+.antal-spelare{
+  font-size: 24px;
+  padding-top: 1em;
+  visibility: ;
 }
