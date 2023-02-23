@@ -1,4 +1,5 @@
 import { displayPokemon } from "./skapapoke.js";
+import { lagSpelare } from "./lag.js";
 
 let hittaPokeBtn = document.querySelector("#hitta-pokemon");
 let mittLagBtn = document.querySelector("#mitt-lag");
@@ -7,6 +8,9 @@ let andraSidan = document.querySelector("#sida-2");
 let searchInput = document.querySelector("#sök-pokemon");
 let felMeddelande = document.querySelector("#fel-meddelande");
 let pokemonWrapper = document.querySelector(".wrapper");
+
+
+
 
 
 // Delar upp sections.
@@ -21,6 +25,7 @@ hittaPokeBtn.addEventListener("click", () => {
 mittLagBtn.addEventListener("click", () => {
   förstaSidan.style.display = "none";
   andraSidan.style.display = "block";
+  lagSpelare()
 });
 
 let allPokemons = [];

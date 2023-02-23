@@ -127,3 +127,10 @@ img{
   /* visibility: ; */
 }
 
+.lagets-spelare{
+  font-weight: bold;
+}
+
+#minst-antal-spelare{
+  text-align: center;
+}
