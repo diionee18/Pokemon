@@ -109,7 +109,7 @@ img{
   width: 150px;
 }
 
-.lägg-till-pokebtn{
+.lägg-till-pokebtn, .ta-bort-pokemon, .byt-namn{
   font-size: 20px;
   padding: 0.5em 0.5em;
   border: none;
@@ -126,3 +126,4 @@ img{
   padding-top: 1em;
   visibility: ;
 }
+
