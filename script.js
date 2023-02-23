@@ -23,8 +23,10 @@ mittLagBtn.addEventListener("click", () => {
   andraSidan.style.display = "block";
 });
 
+let allPokemons = [];
+let chosenPokemons = [];
 
-
+// Här hämtar vi svar från API
 const getPokemonData = async (query) => {
   const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
   const response = await fetch(url);
@@ -32,7 +34,10 @@ const getPokemonData = async (query) => {
     // Hantera fel här om det uppstår ett problem med att hämta data från API:et
     return;
   }
+  
   const data = await response.json();
+  allPokemons = data.results;
+  console.log(allPokemons);
   const matchingPokemon = data.results.filter((pokemon) => {
     const name = pokemon.name.toLowerCase();
     return name.includes(query.toLowerCase());

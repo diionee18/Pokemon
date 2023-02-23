@@ -1,6 +1,8 @@
 // Visa informationen om den matchande Pokemon på webbsidan
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let pokemonWrapper = document.querySelector(".wrapper");
+
+
 const displayPokemon = async (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
@@ -44,7 +46,9 @@ const displayPokemon = async (pokemon) => {
       pokemonPlaceCopy.append(taBort);
       pokemonPlaceCopy.removeChild(
         pokemonPlaceCopy.querySelector(".lägg-till-pokebtn")
-      );
+      ); 
+      
+   
 
       taBort.addEventListener("click", (e) => {
         pokemonPlaceCopy.remove();
