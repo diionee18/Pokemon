@@ -39,29 +39,37 @@ const displayPokemon = async (pokemon) => {
   taBort.innerHTML = "Kicka Pokèmon";
   taBort.setAttribute("class", "ta-bort-pokemon");
 
-  läggTill.addEventListener(
-    "click",
-    () => {
-      const pokemonPlaceCopy = pokemonPlace.cloneNode(true);
+  const pokemonPlaceCopy = pokemonPlace.cloneNode(true);
+  pokemonPlaceCopy.removeChild( pokemonPlaceCopy.querySelector(".lägg-till-pokebtn"));
+
+      läggTill.addEventListener("click", () => {
       pokemonPlaceCopy.append(taBort);
-      pokemonPlaceCopy.removeChild(
-        pokemonPlaceCopy.querySelector(".lägg-till-pokebtn")
-      ); 
+      pokemonWrapper2.append(pokemonPlaceCopy); 
+      pokemonPlaceCopy.appendChild(changeName);
+    })
       
-   
+
 
       taBort.addEventListener("click", (e) => {
         pokemonPlaceCopy.remove();
       }); // mitt lag slutar här
 
+
+
       //Ändra namnet på pokemon
       const changeName = document.createElement("button");
       changeName.innerText = "Byt namn";
       changeName.setAttribute("class", "byt-namn");
+      const name = pokemonPlaceCopy.querySelector("h2");
+      const input = document.createElement("input");
+
       changeName.addEventListener("click", (e) => {
-        const name = pokemonPlaceCopy.querySelector("h2");
-        const input = document.createElement("input");
-        pokemonPlaceCopy.replaceChild(input, name);
+        pokemonPlaceCopy.replaceChild(input, name); 
+      });
+
+    
+
+
 
         input.addEventListener("keydown", (e) => {
           if (e.key === "Enter") {
@@ -69,18 +77,19 @@ const displayPokemon = async (pokemon) => {
             const newH2 = document.createElement("h2");
             newH2.innerText = newName;
             pokemonPlaceCopy.replaceChild(newH2, input);
+
           }
+          // e.target.remove();
         });
+      }
 
-        e.target.remove();
-      });
+      
 
-      pokemonPlaceCopy.append(changeName);
 
-      pokemonWrapper2.append(pokemonPlaceCopy);
-    },
-    { once: true }
-  );
-}; //Ändra namnet på pokemon tar slut här
+      
+    
+   
+  
+ //Ändra namnet på pokemon tar slut här
 
 export {displayPokemon}
