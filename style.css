@@ -89,6 +89,16 @@ border: none;
   flex-wrap: wrap;
 
 }
+.figur {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
 .pokemon-container{
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
@@ -124,6 +134,15 @@ img{
 .antal-spelare{
   font-size: 24px;
   padding-top: 1em;
-
+  /* visibility: ; */
 }
 
+.lagets-spelare{
+  font-weight: bold;
+}
+
+#minst-antal-spelare{
+  text-align: center;
+  padding: 1em 0;
+  width: 250px;
+}
