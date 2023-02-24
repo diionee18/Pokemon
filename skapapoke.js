@@ -6,9 +6,6 @@ let pokemonWrapper = document.querySelector(".wrapper");
 
 
 
-
-
-
 const displayPokemon = async (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
@@ -33,39 +30,38 @@ const displayPokemon = async (pokemon) => {
   let taBort = document.createElement("button");
   taBort.innerHTML = "Kicka Pokèmon";
   taBort.setAttribute("class", "ta-bort-pokemon");
-
+  
   const pokemonPlaceCopy = pokemonPlace.cloneNode(true);
-  pokemonPlaceCopy.removeChild(
-    pokemonPlaceCopy.querySelector(".lägg-till-pokebtn")
-  );
-
+  pokemonPlaceCopy.removeChild(pokemonPlaceCopy.querySelector(".lägg-till-pokebtn"));
+  
   läggTill.addEventListener("click", () => {
     pokemonPlaceCopy.append(taBort);
     pokemonWrapper2.append(pokemonPlaceCopy);
     pokemonPlaceCopy.appendChild(changeName);
-     });
+    pokemonPlace.remove()
+  });
+  
+  // Här kickar vi spelaren och skickar tillbaka den till första sidan
+  const pokemonPlaceOriginal = pokemonPlace.parentNode;
 
-  // Här kickar vi spelaren
-  taBort.addEventListener("click", (e) => {
+    taBort.addEventListener("click", (e) => {
     pokemonPlaceCopy.remove();
-    lagSpelare()
+    lagSpelare();
+    pokemonPlaceOriginal.append(pokemonPlace);
     });
   // mitt lag slutar här
 
 
 
   // byt namn här
-  // Hämta h2-elementet
   const name = pokemonPlaceCopy.querySelector("h2");
   const nameContainer = document.createElement("div");
   const input = document.createElement("input");
+  const changeName = document.createElement("button");
 
   nameContainer.setAttribute("class","byttnamn-div")
   nameContainer.appendChild(name.cloneNode(true));
   nameContainer.appendChild(input);
-
-  // Skapa knappen och lägg till eventlyssnare
-  const changeName = document.createElement("button");
 
   changeName.innerText = "Byt namn";
   changeName.setAttribute("class", "byt-namn");
@@ -75,7 +71,6 @@ const displayPokemon = async (pokemon) => {
     input.focus();
   });
   
-  // Lägg till eventlyssnare för input-elementet
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       const newName = input.value;
@@ -87,9 +82,11 @@ const displayPokemon = async (pokemon) => {
       changeName.remove()
     }
   });
+  //Ändra namnet på pokemon tar slut här
  
 };
 
-//Ändra namnet på pokemon tar slut här
+
+
 
 export { displayPokemon };

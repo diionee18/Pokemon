@@ -132,9 +132,10 @@ img{
 /*sida 2*/
 
 .antal-spelare{
+  margin-top: 1em;
   font-size: 24px;
   padding-top: 1em;
-  /* visibility: ; */
+  border-radius: 20px;
 }
 
 .lagets-spelare{
@@ -146,3 +147,10 @@ img{
   padding: 1em 0;
   width: 250px;
 }
+
+/* reservlag */
+/* .reserv-wrapper{
+  margin-top: 2em;
+  border: 2px blue solid;
+  padding: 4em;
+} */
