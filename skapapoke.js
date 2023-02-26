@@ -11,7 +11,13 @@ const displayPokemon = async (pokemon) => {
   let pokeImg = document.createElement("img");
   let pokeName = document.createElement("h2");
   let läggTill = document.createElement("button");
+  // let krafterUl = document.createElement('ul')
+  // let krafterLI = document.createElement('li')
 
+  // krafterLI.setAttribute("class", "krafterli")
+  // // krafterLI.innerHTML = pokemon.ability
+  
+  // krafterUl.append(krafterLI)
   pokemonPlace.setAttribute("class", "pokemon-container");
   pokeImg.setAttribute("src", pokemon.sprites.other.dream_world.front_default);
   pokeImg.setAttribute("class", "figur");
@@ -25,6 +31,20 @@ const displayPokemon = async (pokemon) => {
   pokemonPlace.append(läggTill);
   pokemonWrapper.append(pokemonPlace);
 
+  // Hämtar abilities här 
+  const abilitiesUl = document.createElement('ul');
+  const krafterText = document.createElement('p')
+  
+  krafterText.innerHTML = 'Abilities'
+  abilitiesUl.append(krafterText)
+  abilitiesUl.setAttribute("class", "ability-poke")
+  for (const ability of pokemon.abilities) {
+    const abilityLi = document.createElement('li');
+    abilityLi.innerHTML = ability.ability.name;
+    abilitiesUl.appendChild(abilityLi);
+  }
+  pokemonPlace.appendChild(abilitiesUl);
+  pokemonWrapper.append(pokemonPlace);
 
   // Här flyttar jag den Pokemon man valt att ha i sitt lag till Mitt lag samt kicka pokemon.
   let taBort = document.createElement("button");
@@ -39,12 +59,13 @@ const displayPokemon = async (pokemon) => {
     pokemonWrapper2.append(pokemonPlaceCopy);
     pokemonPlaceCopy.appendChild(changeName);
     pokemonPlace.remove()
+    console.log('du har klickat enter', pokemon.ability);
   });
   
   // Här kickar vi spelaren och skickar tillbaka den till första sidan
   const pokemonPlaceOriginal = pokemonPlace.parentNode;
-
-    taBort.addEventListener("click", (e) => {
+  
+  taBort.addEventListener("click", (e) => {
     pokemonPlaceCopy.remove();
     lagSpelare();
     pokemonPlaceOriginal.append(pokemonPlace);
@@ -90,3 +111,7 @@ const displayPokemon = async (pokemon) => {
 
 
 export { displayPokemon };
+
+const getAbilities = () =>{
+  
+}

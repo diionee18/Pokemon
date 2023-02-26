@@ -96,7 +96,8 @@ border: none;
 }
 
 .pokemon-container{
-  height: 400px;
+  height: 550px;
+  width: 450px;
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
@@ -154,6 +155,30 @@ img{
   width: 250px;
 }
 
+
+
+/* krafter här */
+.ability-poke{
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: 2px solid rgb(122, 32, 32);
+  border-radius: 10px;
+  box-shadow: -13px 14px 19px -3px rgba(122,32,32,0.75);
+  background: linear-gradient(10deg, rgb(30, 10, 15) 5%, #1a5a6b 35%, rgb(17, 2, 2) 100%) ;
+  padding: 0.5em 2em;
+  font-size: 20px;
+  list-style:disc ;
+}
+
+.ability-poke > p{
+  font-size: 24px;
+  padding-bottom: 0.5em;
+  text-decoration: underline;
+}
+
+.ability-poke > li{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 
 /* desktop size börjar här */
