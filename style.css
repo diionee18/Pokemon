@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+
 /*Header börjar här*/
 #Header{
   text-align: center;
@@ -61,12 +62,6 @@ border: none;
 
 
 
-.fas{
-  position: relative;
-  right: 1.8em;
-  font-size: 22px;
-  color: #BDBCBC;
-}
 
 /* Error meddelande här */
 #error-meddelande{
@@ -80,6 +75,7 @@ border: none;
 
 /* pokemon figur börjar här*/
 .wrapper, .wrapper2{
+  margin-top: 2em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -100,6 +96,7 @@ border: none;
 }
 
 .pokemon-container{
+  height: 400px;
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
@@ -109,12 +106,12 @@ border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
   align-items: center;
   color: white;
 }
 
 img{
+  height: 200px;
   text-align: center;
   width: 150px;
 }
@@ -131,6 +128,15 @@ img{
 
 /*sida 2*/
 
+#sida-2{
+  width: 100%;
+  padding: 0em 1em;
+}
+
+.antal-spelare-div{
+  display: flex;
+  justify-content: center;
+}
 .antal-spelare{
   margin-top: 1em;
   font-size: 24px;
@@ -148,9 +154,20 @@ img{
   width: 250px;
 }
 
-/* reservlag */
-/* .reserv-wrapper{
-  margin-top: 2em;
-  border: 2px blue solid;
-  padding: 4em;
-} */
+
+
+/* desktop size börjar här */
+@media screen and (min-width: 640px){
+  .wrapper{
+    flex-direction: row;
+    gap: 6em;
+    flex-wrap: wrap;
+  }
+  .wrapper2{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6em;
+ 
+  }
+
+}
