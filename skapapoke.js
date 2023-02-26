@@ -111,7 +111,3 @@ const displayPokemon = async (pokemon) => {
 
 
 export { displayPokemon };
-
-const getAbilities = () =>{
-  
-}

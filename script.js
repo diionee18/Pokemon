@@ -28,8 +28,8 @@ mittLagBtn.addEventListener("click", () => {
   lagSpelare()
 });
 
-let allPokemons = [];
-let chosenPokemons = [];
+
+
 
 // Här hämtar vi svar från API
 const getPokemonData = async (query) => {
