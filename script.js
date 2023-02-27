@@ -28,7 +28,7 @@ mittLagBtn.addEventListener("click", () => {
   lagSpelare()
 });
 
-
+let allPokemons = [];
 
 
 // Här hämtar vi svar från API
