@@ -77,6 +77,12 @@ border: none;
   padding: 0;
   font-size: 20px;
 }
+.spelaren-tillagd-notis{
+  margin-top: 0.5em;
+  font-size: 24px;
+  color: green;
+  visibility:hidden;
+}
 
 /* pokemon figur börjar här*/
 .wrapper, .wrapper2{
@@ -112,6 +118,7 @@ border: none;
   justify-content: center;
   align-items: center;
   color: white;
+  margin-bottom: 2em;
 }
 
 .pokemon-container h2{
