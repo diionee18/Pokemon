@@ -97,7 +97,7 @@ border: none;
 
 .pokemon-container{
   height: 550px;
-  width: 450px;
+  /* width: 450px; */
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
@@ -195,4 +195,8 @@ img{
  
   }
 
+  .pokemon-container{
+    height: 550px;
+    width: 450px;
+  }
 }
