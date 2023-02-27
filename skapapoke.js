@@ -129,6 +129,4 @@ const mittLagPokemons =  (pokemon) =>{
           input.value = '';
         }
       });
-
-
 }
