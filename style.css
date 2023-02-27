@@ -97,7 +97,6 @@ border: none;
 
 .pokemon-container{
   height: 550px;
-  /* width: 450px; */
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
@@ -109,6 +108,10 @@ border: none;
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.pokemon-container h2{
+  text-transform: uppercase;
 }
 
 img{
@@ -167,17 +170,21 @@ img{
   background: linear-gradient(10deg, rgb(30, 10, 15) 5%, #1a5a6b 35%, rgb(17, 2, 2) 100%) ;
   padding: 0.5em 2em;
   font-size: 20px;
-  list-style:disc ;
+  /* list-style:url('/flash.png'); */
+  /* list-style-position: outside; */
+  list-style:disc;
 }
 
 .ability-poke > p{
   font-size: 24px;
   padding-bottom: 0.5em;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-align: center;
 }
 
 .ability-poke > li{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 0.5em;
 }
 
 

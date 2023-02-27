@@ -58,8 +58,8 @@ const displayPokemon = async (pokemon) => {
     pokemonPlaceCopy.append(taBort);
     pokemonWrapper2.append(pokemonPlaceCopy);
     pokemonPlaceCopy.appendChild(changeName);
-    pokemonPlace.remove()
-    console.log('du har klickat enter', pokemon.ability);
+    // pokemonPlace.remove()
+    console.log('du har klickat enter');
   });
   
   // Här kickar vi spelaren och skickar tillbaka den till första sidan
@@ -68,7 +68,7 @@ const displayPokemon = async (pokemon) => {
   taBort.addEventListener("click", (e) => {
     pokemonPlaceCopy.remove();
     lagSpelare();
-    pokemonPlaceOriginal.append(pokemonPlace);
+    // pokemonPlaceOriginal.append(pokemonPlace);
     });
   // mitt lag slutar här
 
