@@ -17,6 +17,9 @@ let pokemonWrapper = document.querySelector(".wrapper");
 förstaSidan.style.display = "block";
 andraSidan.style.display = "none";
 
+förstaSidan.setAttribute("class","none")
+andraSidan.setAttribute("class","none")
+
 hittaPokeBtn.addEventListener("click", () => {
   förstaSidan.style.display = "block";
   andraSidan.style.display = "none";
@@ -86,4 +89,3 @@ searchInput.addEventListener("keydown", (e) => {
   }
 });
 
-export { getPokemonData };

@@ -4,16 +4,18 @@
   padding: 0;
 }
 
+body{
+  /* background:  linear-gradient(-150deg, rgb(107, 3, 25) 0%, rgb(3, 3, 13) 20%, rgb(6, 84, 99) 100%); */
+  background-color: rgb(255, 255, 255);
+  
+}
+
 
 /*Header börjar här*/
-.rubrik-lag{
-  text-align: center;
-  font-size: 40px;
-  padding-bottom: 0.2em;
-}
+
 #Header{
   text-align: center;
-  background-color: rgb(56, 56, 56);
+  background:  linear-gradient(150deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(6, 84, 99) 100%);
   padding: 2em 0.2em;
 }
 
@@ -52,8 +54,9 @@
 #sök-pokemon{
 font-size: 22px;
 padding: 0.2em;
-background-color:#383838;
-color: white;
+/* background-color: rgb(24, 22, 22); */
+background-color: rgb(13, 13, 13);
+color: rgb(255, 255, 255);
 border-radius: 10px;
 border: none;
 }
@@ -61,7 +64,7 @@ border: none;
 
 
 ::placeholder{
-  color: #BDBCBC;
+  color: #989898;
   padding-left: 0.6em;
 }
 
@@ -111,7 +114,7 @@ border: none;
   padding: 2em 2em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
-  background:  linear-gradient(-150deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
+  background:  linear-gradient(50deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
   gap: 1em;
   display: flex;
   flex-direction: column;
@@ -143,6 +146,12 @@ img{
 
 /*sida 2*/
 
+.rubrik-lag{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 0.2em;
+}
+
 #sida-2{
   width: 100%;
   padding: 0em 1em;
@@ -154,7 +163,7 @@ img{
 }
 .notis-section{
   margin-top: 0.3em;
-  font-size: 20px;
+  font-size: 24px;
   border-radius: 10px;
 }
 
@@ -183,8 +192,7 @@ img{
   margin-top: 0.5em;
   border: 2px solid rgb(122, 32, 32);
   border-radius: 10px;
-  box-shadow: -13px 14px 19px -3px rgba(122,32,32,0.75);
-  background: linear-gradient(10deg, rgb(30, 10, 15) 5%, #1a5a6b 35%, rgb(17, 2, 2) 100%) ;
+  box-shadow: -7px 8px 10px -3px rgb(10, 155, 184);
   padding: 0.5em 2em;
   font-size: 20px;
   list-style:disc;
