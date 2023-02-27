@@ -6,6 +6,11 @@
 
 
 /*Header börjar här*/
+.rubrik-lag{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 0.2em;
+}
 #Header{
   text-align: center;
   background-color: rgb(56, 56, 56);
@@ -101,7 +106,6 @@ border: none;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
   background:  linear-gradient(-150deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
-  margin-top: 1em;
   gap: 1em;
   display: flex;
   flex-direction: column;
@@ -115,7 +119,7 @@ border: none;
 }
 
 img{
-  height: 200px;
+  height: 150px;
   text-align: center;
   width: 150px;
 }
@@ -141,11 +145,10 @@ img{
   display: flex;
   justify-content: center;
 }
-.antal-spelare{
-  margin-top: 1em;
-  font-size: 24px;
-  padding-top: 1em;
-  border-radius: 20px;
+.notis-section{
+  margin-top: 0.3em;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
 .lagets-spelare{
@@ -155,36 +158,41 @@ img{
 #minst-antal-spelare{
   text-align: center;
   padding: 1em 0;
-  width: 250px;
+  width: 350px;
+}
+
+.Ändra-namn-input{
+  text-align: start;
+  padding: 0.1em 0;
+  font-size: 18px ;
+  margin-bottom: 0.1em;
 }
 
 
 
 /* krafter här */
 .ability-poke{
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
   border: 2px solid rgb(122, 32, 32);
   border-radius: 10px;
   box-shadow: -13px 14px 19px -3px rgba(122,32,32,0.75);
   background: linear-gradient(10deg, rgb(30, 10, 15) 5%, #1a5a6b 35%, rgb(17, 2, 2) 100%) ;
   padding: 0.5em 2em;
   font-size: 20px;
-  /* list-style:url('/flash.png'); */
-  /* list-style-position: outside; */
   list-style:disc;
 }
 
 .ability-poke > p{
   font-size: 24px;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
   text-decoration-line: underline;
   text-align: center;
 }
 
 .ability-poke > li{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 
@@ -192,18 +200,18 @@ img{
 @media screen and (min-width: 640px){
   .wrapper{
     flex-direction: row;
-    gap: 6em;
+    gap: 3em;
     flex-wrap: wrap;
   }
   .wrapper2{
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 6em;
+    gap: 3em;
  
   }
 
   .pokemon-container{
-    height: 550px;
-    width: 450px;
+    height: 550px ;
+    width: 400px;
   }
 }

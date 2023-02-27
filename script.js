@@ -85,3 +85,5 @@ searchInput.addEventListener("keydown", (e) => {
     }
   }
 });
+
+export { getPokemonData };
