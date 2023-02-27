@@ -4,6 +4,7 @@ import { lagSpelare } from "./lag.js";
 
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let pokemonWrapper = document.querySelector(".wrapper");
+let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis")
 
 
 
@@ -47,8 +48,13 @@ const displayPokemon = async (pokemon) => {
   
   läggTill.addEventListener("click", () => {
     mittLagPokemons(pokemon)
-      console.log('du har klickat enter');
   });
+  läggTill.addEventListener("click", ()=>{
+    spelareTIllagdNoits.style.visibility = "visible"
+  })
+  läggTill.addEventListener("mouseout", (e) =>{
+    spelareTIllagdNoits.style.visibility = "hidden"
+  })
  
 };
 
