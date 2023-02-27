@@ -139,38 +139,3 @@ const mittLagPokemons =  (pokemon) =>{
   
 
 }
-
-
-
-
-
-// // byt namn här
-// const name = pokemonPlace.querySelector("h2");
-// const nameContainer = document.createElement("div");
-// const input = document.createElement("input");
-// const changeName = document.createElement("button");
-
-// nameContainer.setAttribute("class","byttnamn-div")
-// nameContainer.appendChild();
-// nameContainer.appendChild(input);
-
-// changeName.innerText = "Byt namn";
-// changeName.setAttribute("class", "byt-namn");
-
-// changeName.addEventListener("click", () => {
-//   pokemonPlace.replaceChild(nameContainer, name);
-//   input.focus();
-// });
-
-// input.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter") {
-//     const newName = input.value;
-//     const newH2 = document.createElement("h2");
-
-//     newH2.innerText = newName;
-//     nameContainer.replaceChild(newH2, nameContainer.firstChild);
-//     input.remove();
-//     changeName.remove()
-//   }
-// });
-// // Ändra namnet på pokemon tar slut här
