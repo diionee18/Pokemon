@@ -211,6 +211,21 @@ img{
 }
 
 
+/* reservlaget börjar här */
+
+.reserv-rubrik{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 1em;
+}
+
+hr{
+  margin-bottom: 1em;
+  border-width: 7px;
+  border-color: rgb(0, 0, 0);
+}
+
+
 /* desktop size börjar här */
 @media screen and (min-width: 640px){
   .wrapper{
@@ -229,4 +244,13 @@ img{
     height: 550px ;
     width: 400px;
   }
+
+  .reservWrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+  }
 }
+
