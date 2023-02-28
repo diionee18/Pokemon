@@ -56,9 +56,7 @@ const getPokemonData = async (query) => {
     pokeError.innerText = `Kunde inte hitta pokemon ${query}`;
     pokeError.setAttribute("id", "error-meddelande");
     felMeddelande.append(pokeError);
-    searchInput.addEventListener(
-      "keydown",
-      (e) => {
+    searchInput.addEventListener("keydown",(e) => {
         pokeError.remove();
       },
       { once: true }

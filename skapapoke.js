@@ -54,15 +54,24 @@ const displayPokemon = async (pokemon) => {
       mittLagPokemons(pokemon)
     } else if (pokeCounter === 3){
       reservLag(pokemon)
-
     }
-  });
-  läggTill.addEventListener("click", ()=>{
-    spelareTIllagdNoits.style.visibility = "visible"
-  })
-  läggTill.addEventListener("mouseout", (e) =>{
-    spelareTIllagdNoits.style.visibility = "hidden"
-  })
+     });
+
+
+     läggTill.addEventListener("click", () =>{
+      notisTillagdSpelare()
+      
+ 
+     }, { once: true } 
+     );
+
+     const notisTillagdSpelare = () =>{
+      let tillagdNotis = document.createElement('p')
+      tillagdNotis.innerHTML = 'Pokémon är tillagd i ditt lag nu'
+      pokemonPlace.append(tillagdNotis)
+     }
+
+ 
  
 };
 
