@@ -194,6 +194,32 @@ img{
   margin-bottom: 0.3em;
 }
 
+.bekräftelse-div{
+  display: none;
+  margin: 0em 1em;
+  padding: 1em 1em;
+  text-align: center;
+  position: absolute;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
+  /* filter:  blur(10px); */
+
+
+}
+
+.bekräftelse-knapp, .avbryt-knapp{
+  margin-top: 1em;
+  font-size: 16px;
+  padding: 0.2em 1em;
+  background: linear-gradient(10deg, rgb(30, 10, 15) 5%, rgb(166, 11, 11) 35%, rgb(17, 2, 2) 100%) ;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 1em;
+
+}
 
 
 /* krafter här */

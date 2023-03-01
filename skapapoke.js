@@ -121,12 +121,43 @@ const mittLagPokemons =  (pokemon) =>{
      let taBort = document.createElement("button");
      taBort.innerHTML = "Kicka Pokèmon";
      taBort.setAttribute("class", "ta-bort-pokemon");
+
+     let bekräftelseDiv = document.createElement('div')
+     bekräftelseDiv.setAttribute("class", "bekräftelse-div")
+     
+     let bekräftelseText = document.createElement('p')
+     bekräftelseText.setAttribute("class","bekräftelse-text")
+     bekräftelseText.innerHTML = "Vill du verkligen ta bort Pokémon?"
+
+     let bekräftelseKnapp = document.createElement('button') 
+     bekräftelseKnapp.setAttribute("class","bekräftelse-knapp")
+     bekräftelseKnapp.innerHTML = "Ta bort"
+     
+     let avbrytKnapp = document.createElement('button')
+     avbrytKnapp.setAttribute("class","avbryt-knapp")
+     avbrytKnapp.innerHTML = "Avbryt"
+
+     bekräftelseDiv.append(bekräftelseText)
+     bekräftelseDiv.append(bekräftelseKnapp)
+     bekräftelseDiv.append(avbrytKnapp)
+
+     pokemonPlace.append(bekräftelseDiv)
+
      taBort.addEventListener("click", (e) => {
-       pokemonPlace.remove();
+       bekräftelseDiv.style.display = "block"
        lagSpelare();
       });
+
+      avbrytKnapp.addEventListener("click", () =>{
+        bekräftelseDiv.style.display = "none"
+      })
       pokemonPlace.append(taBort)
       // Här slutar kickar pokemon.
+      
+      bekräftelseKnapp.addEventListener("click", () => {
+        pokemonPlace.remove()
+        lagSpelare();
+      })
 
       let ändraNamnBtn = document.createElement('button')
       let input = document.createElement('input')
