@@ -168,15 +168,29 @@ const mittLagPokemons = (pokemon) => {
 
   // draging(pokemonPlace)
   pokemonPlace.draggable = true;
-  let containers = document.querySelectorAll("#container");
 
-  const pokiee = Array.from(pokemonPlace);
 
-  // pokiee.forEach(draggable => {
-  //   draggable.addEventListener('dragstart', (e) => {
+  let högerKnapp = document.createElement('button')
+  högerKnapp.innerHTML = "klicka för att ändra ordning"
+  högerKnapp.setAttribute("class", "höger")
+  
 
-  //   })
-  // })
+
+  pokemonPlace.append(högerKnapp)
+  
+  högerKnapp.addEventListener("click", flyttaHöger)
+  
+  
+  
+  
+  function flyttaHöger(){
+    if(pokemonPlace && pokemonPlace.previousElementSibling){
+      pokemonWrapper2.insertBefore(pokemonPlace, pokemonPlace.previousElementSibling)
+    }
+  }
+  
+    
+ 
 };
 
 const reservLag = (pokemon) => {
@@ -247,7 +261,10 @@ const reservLag = (pokemon) => {
   });
   pokemonPlace.draggable = true;
   // draging(pokemonPlace)
-};
+
+  };
+
+//Här skapar jag drag and drop
 
 document.addEventListener("dragstart", (e) => {
   e.dataTransfer.setData("text/plain", e.target.id);
@@ -267,9 +284,7 @@ pokemonWrapper2.addEventListener("drop", (e) => {
   if (!draggableElement) {
     return;
   }
-  const pokeCounter = document.querySelectorAll(
-    ".wrapper2 .pokemon-container"
-  ).length;
+  const pokeCounter = document.querySelectorAll(".wrapper2 .pokemon-container").length;
   if (pokeCounter < 3) {
     pokemonWrapper2.appendChild(draggableElement);
     e.dataTransfer.clearData();

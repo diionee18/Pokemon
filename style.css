@@ -96,7 +96,8 @@ background-color: #9F0D0D;
 border-radius: 10px;
 }
 
-.wrapper, .wrapper2{
+.wrapper, .wrapper2 , .reservWrapper{
+  min-height: 10vh;
   margin-top: 2em;
   width: 100%;
   display: flex;
@@ -247,7 +248,23 @@ img{
   margin-bottom: 0.2em;
 }
 
+.höger{
+  color: white;
+  font-size: 18px;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding: 0.5em;
+  background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+
+.höger:hover{
+  background: white;
+  color: black;
+}
 /* reservlaget börjar här */
 
 .reserv-rubrik{
@@ -278,7 +295,7 @@ hr{
   }
 
   .pokemon-container{
-    /* height: 450px; */
+    height: 450px;
     width: 250px;
   }
 
