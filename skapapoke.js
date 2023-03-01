@@ -1,15 +1,9 @@
 import { lagSpelare } from "./lag.js";
 
-
-
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let reservWrapper = document.querySelector(".reservWrapper");
 let pokemonWrapper = document.querySelector(".wrapper");
-let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis")
-
-
-
-
+let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis");
 
 const displayPokemon = async (pokemon) => {
   let pokemonPlace = document.createElement("div");
@@ -30,66 +24,60 @@ const displayPokemon = async (pokemon) => {
   pokemonPlace.append(läggTill);
   pokemonWrapper.append(pokemonPlace);
 
+  // Hämtar abilities här
+  const abilitiesUl = document.createElement("ul");
+  const krafterText = document.createElement("p");
 
-  // Hämtar abilities här 
-  const abilitiesUl = document.createElement('ul');
-  const krafterText = document.createElement('p')
-  
-  krafterText.innerHTML = 'Abilities'
-  abilitiesUl.append(krafterText)
-  abilitiesUl.setAttribute("class", "ability-poke")
+  krafterText.innerHTML = "Abilities";
+  abilitiesUl.append(krafterText);
+  abilitiesUl.setAttribute("class", "ability-poke");
   for (const ability of pokemon.abilities) {
-    const abilityLi = document.createElement('li');
+    const abilityLi = document.createElement("li");
     abilityLi.innerHTML = ability.ability.name;
     abilitiesUl.appendChild(abilityLi);
   }
   pokemonPlace.appendChild(abilitiesUl);
   pokemonWrapper.append(pokemonPlace);
 
-
-  
-  
   läggTill.addEventListener("click", () => {
-    let pokeCounter = document.querySelectorAll(".wrapper2 .pokemon-container").length
-    console.log(pokeCounter)
-    if(pokeCounter < 3){
-      mittLagPokemons(pokemon)
-    } else if (pokeCounter === 3){
-      reservLag(pokemon)
+    let pokeCounter = document.querySelectorAll(
+      ".wrapper2 .pokemon-container"
+    ).length;
+    console.log(pokeCounter);
+    if (pokeCounter < 3) {
+      mittLagPokemons(pokemon);
+    } else if (pokeCounter === 3) {
+      reservLag(pokemon);
     }
-     });
+  });
 
+  läggTill.addEventListener("click", () => {
+    notisTillagdSpelare();
+  });
 
-     läggTill.addEventListener("click", () =>{
-      notisTillagdSpelare()
-      
- 
-     } 
-     );
-
-     const notisTillagdSpelare = () =>{
-      let tillagdNotis = document.createElement('p')
-      tillagdNotis.setAttribute("class", "spelare-tillagd")
-      tillagdNotis.innerHTML = 'Pokémon är tillagd i ditt lag nu'
-      pokemonPlace.append(tillagdNotis)
-      setTimeout(() => {
-       tillagdNotis.remove()
-      }, 3000)
-     }
-
- 
- 
+  const notisTillagdSpelare = () => {
+    let tillagdNotis = document.createElement("p");
+    tillagdNotis.setAttribute("class", "spelare-tillagd");
+    tillagdNotis.innerHTML = "Pokémon är tillagd i ditt lag nu";
+    pokemonPlace.append(tillagdNotis);
+    setTimeout(() => {
+      tillagdNotis.remove();
+    }, 3000);
+  };
 };
-
 
 export { displayPokemon };
 
-const mittLagPokemons =  (pokemon) =>{
+const mittLagPokemons = (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
   let pokeName = document.createElement("h2");
 
   pokemonPlace.setAttribute("class", "pokemon-container");
+  pokemonPlace.setAttribute(
+    "id",
+    Math.random().toString(16).slice(2).toString()
+  );
   pokeImg.setAttribute("src", pokemon.sprites.other.dream_world.front_default);
   pokeImg.setAttribute("class", "figur");
 
@@ -99,123 +87,108 @@ const mittLagPokemons =  (pokemon) =>{
   pokemonPlace.append(pokeName);
   pokemonWrapper2.appendChild(pokemonPlace);
 
+  // Hämtar abilities här
+  const abilitiesUl = document.createElement("ul");
+  const krafterText = document.createElement("p");
 
-
-
-  
-  // Hämtar abilities här 
-  const abilitiesUl = document.createElement('ul');
-  const krafterText = document.createElement('p')
-  
-  krafterText.innerHTML = 'Abilities'
-  abilitiesUl.append(krafterText)
-  abilitiesUl.setAttribute("class", "ability-poke")
+  krafterText.innerHTML = "Abilities";
+  abilitiesUl.append(krafterText);
+  abilitiesUl.setAttribute("class", "ability-poke");
   for (const ability of pokemon.abilities) {
-    const abilityLi = document.createElement('li');
+    const abilityLi = document.createElement("li");
     abilityLi.innerHTML = ability.ability.name;
     abilitiesUl.appendChild(abilityLi);
   }
   pokemonPlace.appendChild(abilitiesUl);
   pokemonWrapper2.append(pokemonPlace);
 
+  // Här kickar man pokemon.
+  let taBort = document.createElement("button");
+  taBort.innerHTML = "Kicka Pokèmon";
+  taBort.setAttribute("class", "ta-bort-pokemon");
 
-     // Här kickar man pokemon.
-     let taBort = document.createElement("button");
-     taBort.innerHTML = "Kicka Pokèmon";
-     taBort.setAttribute("class", "ta-bort-pokemon");
+  let bekräftelseDiv = document.createElement("div");
+  bekräftelseDiv.setAttribute("class", "bekräftelse-div");
 
-     let bekräftelseDiv = document.createElement('div')
-     bekräftelseDiv.setAttribute("class", "bekräftelse-div")
-     
-     let bekräftelseText = document.createElement('p')
-     bekräftelseText.setAttribute("class","bekräftelse-text")
-     bekräftelseText.innerHTML = "Vill du verkligen ta bort Pokémon?"
+  let bekräftelseText = document.createElement("p");
+  bekräftelseText.setAttribute("class", "bekräftelse-text");
+  bekräftelseText.innerHTML = "Vill du verkligen ta bort Pokémon?";
 
-     let bekräftelseKnapp = document.createElement('button') 
-     bekräftelseKnapp.setAttribute("class","bekräftelse-knapp")
-     bekräftelseKnapp.innerHTML = "Ta bort"
-     
-     let avbrytKnapp = document.createElement('button')
-     avbrytKnapp.setAttribute("class","avbryt-knapp")
-     avbrytKnapp.innerHTML = "Avbryt"
+  let bekräftelseKnapp = document.createElement("button");
+  bekräftelseKnapp.setAttribute("class", "bekräftelse-knapp");
+  bekräftelseKnapp.innerHTML = "Ta bort";
 
-     bekräftelseDiv.append(bekräftelseText)
-     bekräftelseDiv.append(bekräftelseKnapp)
-     bekräftelseDiv.append(avbrytKnapp)
+  let avbrytKnapp = document.createElement("button");
+  avbrytKnapp.setAttribute("class", "avbryt-knapp");
+  avbrytKnapp.innerHTML = "Avbryt";
 
-    
+  bekräftelseDiv.append(bekräftelseText);
+  bekräftelseDiv.append(bekräftelseKnapp);
+  bekräftelseDiv.append(avbrytKnapp);
 
-     pokemonPlace.append(bekräftelseDiv)
+  pokemonPlace.append(bekräftelseDiv);
 
-     taBort.addEventListener("click", (e) => {
-       bekräftelseDiv.style.display = "block"
-       lagSpelare();
-      });
+  taBort.addEventListener("click", (e) => {
+    bekräftelseDiv.style.display = "block";
+    lagSpelare();
+  });
 
-      avbrytKnapp.addEventListener("click", () =>{
-        bekräftelseDiv.style.display = "none"
-      })
-      pokemonPlace.append(taBort)
-      
-      bekräftelseKnapp.addEventListener("click", () => {
-        pokemonPlace.remove()
-        lagSpelare();
-      })
-      // Här slutar kickar pokemon.
+  avbrytKnapp.addEventListener("click", () => {
+    bekräftelseDiv.style.display = "none";
+  });
+  pokemonPlace.append(taBort);
 
-      let ändraNamnBtn = document.createElement('button')
-      let input = document.createElement('input')
+  bekräftelseKnapp.addEventListener("click", () => {
+    pokemonPlace.remove();
+    lagSpelare();
+  });
+  // Här slutar kickar pokemon.
 
-      ändraNamnBtn.setAttribute("class", "byt-namn")
-      input.setAttribute("class", "Ändra-namn-input")
-      ändraNamnBtn.innerHTML = 'Ändra namn'
-      pokemonPlace.append(ändraNamnBtn)
+  let ändraNamnBtn = document.createElement("button");
+  let input = document.createElement("input");
 
-      input.placeholder = 'Skriv in namnet här'
+  ändraNamnBtn.setAttribute("class", "byt-namn");
+  input.setAttribute("class", "Ändra-namn-input");
+  ändraNamnBtn.innerHTML = "Ändra namn";
+  pokemonPlace.append(ändraNamnBtn);
 
+  input.placeholder = "Skriv in namnet här";
 
-      ändraNamnBtn.addEventListener('click', () =>{
-        pokemonPlace.append(input)
-        input.focus()
-      });
-      input.addEventListener('keydown', (e) =>{
-        if(e.key === 'Enter'){
-          pokeName.innerHTML = input.value;
-          input.remove()
-          input.value = '';
-        }
-      });
+  ändraNamnBtn.addEventListener("click", () => {
+    pokemonPlace.append(input);
+    input.focus();
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      pokeName.innerHTML = input.value;
+      input.remove();
+      input.value = "";
+    }
+  });
 
+  // draging(pokemonPlace)
+  pokemonPlace.draggable = true;
+  let containers = document.querySelectorAll("#container");
 
-        // draging(pokemonPlace)
-        pokemonPlace.draggable = true
-        let dragables = document.querySelectorAll(".wrapper2 .pokemon-container")
-        let containers = document.querySelectorAll("#container")
-     
-        dragables.forEach(draggable => {
-          draggable.addEventListener('dragstart',  () => {
-            
-          })
-        })
+  const pokiee = Array.from(pokemonPlace);
 
-        containers.forEach(container => {
-          container.addEventListener('dragover', () =>{
-            const dragable = document.querySelectorAll(".wrapper2 .pokemon-container")
-            container.appendChild()
-          })
-        } )
-        
-   
+  // pokiee.forEach(draggable => {
+  //   draggable.addEventListener('dragstart', (e) => {
 
-}
+  //   })
+  // })
+};
 
-
-const reservLag = (pokemon) =>{
+const reservLag = (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
   let pokeName = document.createElement("h2");
 
   pokemonPlace.setAttribute("class", "pokemon-container");
+  pokemonPlace.setAttribute(
+    "id",
+    Math.random().toString(16).slice(2).toString()
+  );
   pokeImg.setAttribute("src", pokemon.sprites.other.dream_world.front_default);
   pokeImg.setAttribute("class", "figur");
 
@@ -225,76 +198,98 @@ const reservLag = (pokemon) =>{
   pokemonPlace.append(pokeName);
   reservWrapper.appendChild(pokemonPlace);
 
+  // Hämtar abilities här
+  const abilitiesUl = document.createElement("ul");
+  const krafterText = document.createElement("p");
 
-
-
-  
-  // Hämtar abilities här 
-  const abilitiesUl = document.createElement('ul');
-  const krafterText = document.createElement('p')
-  
-  krafterText.innerHTML = 'Abilities'
-  abilitiesUl.append(krafterText)
-  abilitiesUl.setAttribute("class", "ability-poke")
+  krafterText.innerHTML = "Abilities";
+  abilitiesUl.append(krafterText);
+  abilitiesUl.setAttribute("class", "ability-poke");
   for (const ability of pokemon.abilities) {
-    const abilityLi = document.createElement('li');
+    const abilityLi = document.createElement("li");
     abilityLi.innerHTML = ability.ability.name;
     abilitiesUl.appendChild(abilityLi);
   }
   pokemonPlace.appendChild(abilitiesUl);
   reservWrapper.append(pokemonPlace);
 
+  // Här kickar man pokemon.
+  let taBort = document.createElement("button");
+  taBort.innerHTML = "Kicka Pokèmon";
+  taBort.setAttribute("class", "ta-bort-pokemon");
+  taBort.addEventListener("click", (e) => {
+    pokemonPlace.remove();
+    lagSpelare();
+  });
+  pokemonPlace.append(taBort);
+  // Här slutar kickar pokemon.
 
-     // Här kickar man pokemon.
-     let taBort = document.createElement("button");
-     taBort.innerHTML = "Kicka Pokèmon";
-     taBort.setAttribute("class", "ta-bort-pokemon");
-     taBort.addEventListener("click", (e) => {
-       pokemonPlace.remove();
-       lagSpelare();
-      });
-      pokemonPlace.append(taBort)
-      // Här slutar kickar pokemon.
+  let ändraNamnBtn = document.createElement("button");
+  let input = document.createElement("input");
 
-      let ändraNamnBtn = document.createElement('button')
-      let input = document.createElement('input')
+  ändraNamnBtn.setAttribute("class", "byt-namn");
+  input.setAttribute("class", "Ändra-namn-input");
+  ändraNamnBtn.innerHTML = "Ändra namn";
+  pokemonPlace.append(ändraNamnBtn);
 
-      ändraNamnBtn.setAttribute("class", "byt-namn")
-      input.setAttribute("class", "Ändra-namn-input")
-      ändraNamnBtn.innerHTML = 'Ändra namn'
-      pokemonPlace.append(ändraNamnBtn)
+  input.placeholder = "Skriv in namnet här";
 
-      input.placeholder = 'Skriv in namnet här'
+  ändraNamnBtn.addEventListener("click", () => {
+    pokemonPlace.append(input);
+    input.focus();
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      pokeName.innerHTML = input.value;
+      input.remove();
+      input.value = "";
+    }
+  });
+  pokemonPlace.draggable = true;
+  // draging(pokemonPlace)
+};
+
+document.addEventListener("dragstart", (e) => {
+  e.dataTransfer.setData("text/plain", e.target.id);
+  console.log(e);
+  console.log("dragstart", e.target.id);
+});
+
+pokemonWrapper2.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
 
 
-      ändraNamnBtn.addEventListener('click', () =>{
-        pokemonPlace.append(input)
-        input.focus()
-      });
-      input.addEventListener('keydown', (e) =>{
-        if(e.key === 'Enter'){
-          pokeName.innerHTML = input.value;
-          input.remove()
-          input.value = '';
-        }
-      });
+pokemonWrapper2.addEventListener("drop", (e) => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData("text/plain");
+  const draggableElement = document.getElementById(id);
+  if (!draggableElement) {
+    return;
+  }
+  const pokeCounter = document.querySelectorAll(
+    ".wrapper2 .pokemon-container"
+  ).length;
+  if (pokeCounter < 3) {
+    pokemonWrapper2.appendChild(draggableElement);
+    e.dataTransfer.clearData();
+    lagSpelare();
+  }
+});
 
-      // draging(pokemonPlace)
+reservWrapper.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
 
+reservWrapper.addEventListener("drop", (e) => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData("text/plain");
+  const draggableElement = document.getElementById(id);
+  if (!draggableElement) {
+    return;
+  }
+  reservWrapper.appendChild(draggableElement);
+  e.dataTransfer.clearData();
+  lagSpelare();
+});
 
-}
-
-// const draging = (pokemonPlace) =>{
-//   pokemonPlace.draggable = true
-     
-//   pokemonPlace.addEventListener('dragstart', () =>{
-//     console.log('drag start')
-//   })
-//   pokemonPlace.addEventListener('dragend', () =>{
-//     console.log('drag start')
-//     let dragbar = document.querySelectorAll('.pokemon-container')
-//     reservWrapper.append(dragbar)
-//   })
-//   container.addEventListener('dragover', () =>{
-//   })
-// }
