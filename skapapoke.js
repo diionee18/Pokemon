@@ -67,11 +67,12 @@ const displayPokemon = async (pokemon) => {
 
      const notisTillagdSpelare = () =>{
       let tillagdNotis = document.createElement('p')
+      tillagdNotis.setAttribute("class", "spelare-tillagd")
       tillagdNotis.innerHTML = 'Pokémon är tillagd i ditt lag nu'
       pokemonPlace.append(tillagdNotis)
       setTimeout(() => {
        tillagdNotis.remove()
-      }, 1000)
+      }, 3000)
      }
 
  
