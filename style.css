@@ -301,5 +301,10 @@ hr{
   .hitta-poke{
     font-size: 22px;
   }
+
+  .pokemon-container h2{
+    font-size: 24px;
+    text-transform: uppercase;
+  }
 }
 

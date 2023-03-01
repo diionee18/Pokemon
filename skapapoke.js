@@ -9,6 +9,8 @@ let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis")
 
 
 
+
+
 const displayPokemon = async (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
@@ -141,6 +143,8 @@ const mittLagPokemons =  (pokemon) =>{
      bekräftelseDiv.append(bekräftelseKnapp)
      bekräftelseDiv.append(avbrytKnapp)
 
+    
+
      pokemonPlace.append(bekräftelseDiv)
 
      taBort.addEventListener("click", (e) => {
@@ -152,12 +156,12 @@ const mittLagPokemons =  (pokemon) =>{
         bekräftelseDiv.style.display = "none"
       })
       pokemonPlace.append(taBort)
-      // Här slutar kickar pokemon.
       
       bekräftelseKnapp.addEventListener("click", () => {
         pokemonPlace.remove()
         lagSpelare();
       })
+      // Här slutar kickar pokemon.
 
       let ändraNamnBtn = document.createElement('button')
       let input = document.createElement('input')
@@ -182,6 +186,26 @@ const mittLagPokemons =  (pokemon) =>{
         }
       });
 
+
+        // draging(pokemonPlace)
+        pokemonPlace.draggable = true
+        let dragables = document.querySelectorAll(".wrapper2 .pokemon-container")
+        let containers = document.querySelectorAll("#container")
+     
+        dragables.forEach(draggable => {
+          draggable.addEventListener('dragstart',  () => {
+            
+          })
+        })
+
+        containers.forEach(container => {
+          container.addEventListener('dragover', () =>{
+            const dragable = document.querySelectorAll(".wrapper2 .pokemon-container")
+            container.appendChild()
+          })
+        } )
+        
+   
 
 }
 
@@ -255,5 +279,22 @@ const reservLag = (pokemon) =>{
         }
       });
 
+      // draging(pokemonPlace)
+
 
 }
+
+// const draging = (pokemonPlace) =>{
+//   pokemonPlace.draggable = true
+     
+//   pokemonPlace.addEventListener('dragstart', () =>{
+//     console.log('drag start')
+//   })
+//   pokemonPlace.addEventListener('dragend', () =>{
+//     console.log('drag start')
+//     let dragbar = document.querySelectorAll('.pokemon-container')
+//     reservWrapper.append(dragbar)
+//   })
+//   container.addEventListener('dragover', () =>{
+//   })
+// }
