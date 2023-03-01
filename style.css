@@ -21,7 +21,7 @@ body{
 
 #Header > h1{
   color: white;
-  font-size: 26px;
+  font-size: 20px;
   padding-bottom: 1em;
 }
 
@@ -30,7 +30,7 @@ body{
   padding: 0.5em 0.2em;
   background-color: rgb(159, 13, 13);
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -78,7 +78,7 @@ border: none;
   width: 100%;
   margin-top: 0.5em;
   padding: 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 .spelaren-tillagd-notis{
   margin-top: 0.5em;
@@ -110,12 +110,12 @@ border: none;
 }
 
 .pokemon-container{
-  height: 550px;
-  padding: 2em 2em;
+  height: 390px;
+  padding: 2em 1em;
   border: 2px solid #9F0D0D;
   border-radius: 20px;
   background:  linear-gradient(50deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
-  gap: 1em;
+  gap: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,17 +125,18 @@ border: none;
 }
 
 .pokemon-container h2{
+  font-size: 16px;
   text-transform: uppercase;
 }
 
 img{
-  height: 150px;
+  height: 80px;
   text-align: center;
   width: 150px;
 }
 
 .lägg-till-pokebtn, .ta-bort-pokemon, .byt-namn{
-  font-size: 20px;
+  font-size: 16px;
   padding: 0.5em 0.5em;
   border: none;
   font-weight: bold;
@@ -148,7 +149,7 @@ img{
 
 .rubrik-lag{
   text-align: center;
-  font-size: 40px;
+  font-size: 28px;
   padding-bottom: 0.2em;
 }
 
@@ -163,7 +164,7 @@ img{
 }
 .notis-section{
   margin-top: 0.3em;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 10px;
 }
 
@@ -179,9 +180,10 @@ img{
 
 .Ändra-namn-input{
   text-align: start;
-  padding: 0.1em 0;
-  font-size: 18px ;
-  margin-bottom: 0.1em;
+  border-radius: 5px;
+  padding: 0.1em 0em;
+  font-size: 16px ;
+  margin-bottom: 0.3em;
 }
 
 
@@ -193,19 +195,20 @@ img{
   border: 2px solid rgb(122, 32, 32);
   border-radius: 10px;
   box-shadow: -7px 8px 10px -3px rgb(10, 155, 184);
-  padding: 0.5em 2em;
+  padding: 0.5em 1.3em;
   font-size: 20px;
   list-style:disc;
 }
 
 .ability-poke > p{
-  font-size: 24px;
+  font-size: 16px;
   padding-bottom: 0.2em;
   text-decoration-line: underline;
   text-align: center;
 }
 
 .ability-poke > li{
+  font-size: 16px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-bottom: 0.2em;
 }
@@ -241,8 +244,8 @@ hr{
   }
 
   .pokemon-container{
-    height: 550px ;
-    width: 400px;
+    /* height: 450px; */
+    width: 250px;
   }
 
   .reservWrapper{
@@ -251,6 +254,18 @@ hr{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3em;
+  }
+  #Header > h1{
+    font-size: 30px;
+  }
+  .rubrik-lag{
+    font-size: 40px;
+  }
+  .notis-section{
+  font-size: 24px;
+  }
+  .hitta-poke{
+    font-size: 22px;
   }
 }
 
