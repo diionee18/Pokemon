@@ -162,6 +162,13 @@ img{
 
 /*sida 2*/
 
+.ord-spelare{
+  margin-top: 1em;
+  text-align: center;
+  font-size: 26px;
+  text-decoration: underline;
+}
+
 .hr-notis{
   display: block;
   border-width: 2px;
@@ -379,6 +386,9 @@ hr{
   #minst-antal-spelare-förstasidan{
     font-size: 24px;
   }
+  .ord-spelare{
+    font-size: 40px;
+    }
 
 }
 

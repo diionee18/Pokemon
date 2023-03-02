@@ -7,8 +7,9 @@ const lagSpelare = () =>{
     antalSpelare.innerHTML = `<span class="lagets-spelare"> Du har ${pokeCounter} Pokémon i huvudlaget och ${antalReserv} i reserv <br>  </span>För att kunna spela behöver du minst ${3- pokeCounter} till i huvudlaget. <hr class="hr-notis"> Du kan dra Pokémons och släppa dem i både huvudlaget & reservlaget`
     antalSpelare.style.border = "solid red 5px";
     antalSpelare.style.padding = "0em 2em"
+    antalSpelare.style.margin = "0em 1em"
   }else{
-    antalSpelare.innerHTML = `<span class="lagets-spelare"> Du har ${pokeCounter} ordinare Pokémon <br>  </span> och du har <span class="lagets-spelare" > ${antalReserv} </span> i reserv, du kan lägga till fler. <hr class="hr-notis"> Du kan dra och släppa Pokémons, för att ändra positonen i huvudlaget så använder du knappen som finns i kortet `
+    antalSpelare.innerHTML = `<span class="lagets-spelare"> Du har ${pokeCounter} ordinare Pokémon <br>  </span> och du har <span class="lagets-spelare" > ${antalReserv} </span> i reserv, du kan lägga till fler. <hr class="hr-notis"> Du kan dra och släppa Pokémons. För att ändra positonen i huvudlaget så använder du knappen som finns i kortet `
     antalSpelare.style.border = "solid green 5px";
   }
 }
