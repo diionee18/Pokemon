@@ -188,11 +188,23 @@ img{
 }
 
 .Ändra-namn-input{
+  display: inline-block;
+  width: 150px;
+  display: inline;
   text-align: start;
   border-radius: 5px;
   padding: 0.1em 0em;
   font-size: 16px ;
   margin-bottom: 0.3em;
+}
+.avbryt-namn-x{
+  padding: 0.2em 1em;
+  color: white;
+  font-size: 20px;
+  background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .bekräftelse-div{

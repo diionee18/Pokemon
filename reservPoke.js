@@ -1,8 +1,10 @@
+import { lagSpelare } from "./lag.js";
+
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let reservWrapper = document.querySelector(".reservWrapper");
 let pokemonWrapper = document.querySelector(".wrapper");
 let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis");
-let högerKnapp = document.createElement('button')
+
 
 
 const reservLag = (pokemon) => {
@@ -43,39 +45,107 @@ const reservLag = (pokemon) => {
   let taBort = document.createElement("button");
   taBort.innerHTML = "Kicka Pokèmon";
   taBort.setAttribute("class", "ta-bort-pokemon");
+
+  let bekräftelseDiv = document.createElement("div");
+  bekräftelseDiv.setAttribute("class", "bekräftelse-div");
+
+  let bekräftelseText = document.createElement("p");
+  bekräftelseText.setAttribute("class", "bekräftelse-text");
+  bekräftelseText.innerHTML = "Vill du verkligen ta bort Pokémon?";
+
+  let bekräftelseKnapp = document.createElement("button");
+  bekräftelseKnapp.setAttribute("class", "bekräftelse-knapp");
+  bekräftelseKnapp.innerHTML = "Ta bort";
+
+  let avbrytKnapp = document.createElement("button");
+  avbrytKnapp.setAttribute("class", "avbryt-knapp");
+  avbrytKnapp.innerHTML = "Avbryt";
+
+  bekräftelseDiv.append(bekräftelseText);
+  bekräftelseDiv.append(bekräftelseKnapp);
+  bekräftelseDiv.append(avbrytKnapp);
+
+  pokemonPlace.append(bekräftelseDiv);
+
   taBort.addEventListener("click", (e) => {
+    bekräftelseDiv.style.display = "block";
+    lagSpelare();
+  });
+
+  avbrytKnapp.addEventListener("click", () => {
+    bekräftelseDiv.style.display = "none";
+  });
+  pokemonPlace.append(taBort);
+
+  bekräftelseKnapp.addEventListener("click", () => {
     pokemonPlace.remove();
     lagSpelare();
   });
-  pokemonPlace.append(taBort);
+
+ 
   // Här slutar kickar pokemon.
 
+  //Ändra namnet på pokemon
   let ändraNamnBtn = document.createElement("button");
-  let input = document.createElement("input");
-
   ändraNamnBtn.setAttribute("class", "byt-namn");
+  
+  let input = document.createElement("input");
   input.setAttribute("class", "Ändra-namn-input");
+
+  let avbrytBytaNamn = document.createElement("button")
+  avbrytBytaNamn.setAttribute("class", "avbryt-namn-x")
+  avbrytBytaNamn.innerHTML = "Avbryt"
+
   ändraNamnBtn.innerHTML = "Ändra namn";
   pokemonPlace.append(ändraNamnBtn);
 
-  input.placeholder = "Skriv in namnet här";
+  input.placeholder = "Skriv in ett namn";
 
   ändraNamnBtn.addEventListener("click", () => {
     pokemonPlace.append(input);
+    pokemonPlace.append(avbrytBytaNamn)
     input.focus();
   });
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       pokeName.innerHTML = input.value;
       input.remove();
+      avbrytBytaNamn.remove();
       input.value = "";
     }
   });
-  pokemonPlace.draggable = true;
+
+  avbrytBytaNamn.addEventListener("click", () =>{
+    // input.style.display= "none"
+    // avbrytBytaNamn.style.display= "none"
+    input.remove()
+    avbrytBytaNamn.remove()
+  })
+  //Ändra namnet på pokemon slutar här
+
+   pokemonPlace.draggable = true;
   
-  // let döljHögerKnapp = document.querySelectorAll('.reservWrapper .pokemon-container .höger')
-  // döljHögerKnapp.style.display = "none"
-  högerKnapp.style.display = "none"
+   // ändra ordning knapp
+   let högerKnapp = document.createElement("button");
+   högerKnapp.innerHTML = "klicka för att flytta ett steg fram";
+   högerKnapp.setAttribute("class", "höger");
+ 
+   pokemonPlace.append(högerKnapp);
+
+   högerKnapp.style.display = "none"
+ 
+   högerKnapp.addEventListener("click", flyttaHöger);
+ 
+   function flyttaHöger() {
+     if (pokemonPlace && pokemonPlace.previousElementSibling) {
+       console.log(pokemonPlace.previousElementSibling);
+       pokemonWrapper2.insertBefore(
+         pokemonPlace,
+         pokemonPlace.previousElementSibling
+       );
+     }
+   }
+ 
   
 
   };
