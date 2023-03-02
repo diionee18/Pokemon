@@ -163,13 +163,21 @@ img{
 }
 
 #sida-2{
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding: 0em 1em;
 }
 
 .antal-spelare-div{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.invis{
+  visibility: hidden;
 }
 .notis-section{
   margin-top: 0.3em;
@@ -182,6 +190,7 @@ img{
 }
 
 #minst-antal-spelare{
+  display: inline-block;
   text-align: center;
   padding: 1em 0;
   width: 350px;
@@ -205,6 +214,7 @@ img{
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-bottom: 1em;
 }
 
 .bekräftelse-div{
@@ -292,6 +302,9 @@ hr{
 }
 
 
+
+
+
 /* desktop size börjar här */
 @media screen and (min-width: 640px){
   .wrapper{
@@ -307,7 +320,7 @@ hr{
   }
 
   .pokemon-container{
-    height: 450px;
+    height: 540px ;
     width: 250px;
   }
 

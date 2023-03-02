@@ -147,29 +147,45 @@ const mittLagPokemons = (pokemon) => {
   });
   // Här slutar kickar pokemon.
 
-  let ändraNamnBtn = document.createElement("button");
-  let input = document.createElement("input");
+    //Ändra namnet på pokemon
+    let ändraNamnBtn = document.createElement("button");
+    ändraNamnBtn.setAttribute("class", "byt-namn");
+    
+    let input = document.createElement("input");
+    input.setAttribute("class", "Ändra-namn-input");
+  
+    let avbrytBytaNamn = document.createElement("button")
+    avbrytBytaNamn.setAttribute("class", "avbryt-namn-x")
+    avbrytBytaNamn.innerHTML = "Avbryt"
+  
+    ändraNamnBtn.innerHTML = "Ändra namn";
+    pokemonPlace.append(ändraNamnBtn);
+  
+    input.placeholder = "Skriv in ett namn";
+  
+    ändraNamnBtn.addEventListener("click", () => {
+      pokemonPlace.append(input);
+      pokemonPlace.append(avbrytBytaNamn)
+      input.focus();
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        pokeName.innerHTML = input.value;
+        input.remove();
+        avbrytBytaNamn.remove();
+        input.value = "";
+      }
+    });
+  
+    avbrytBytaNamn.addEventListener("click", () =>{
+      // input.style.display= "none"
+      // avbrytBytaNamn.style.display= "none"
+      input.remove()
+      avbrytBytaNamn.remove()
+    })
+    //Ändra namnet på pokemon slutar här
 
-  ändraNamnBtn.setAttribute("class", "byt-namn");
-  input.setAttribute("class", "Ändra-namn-input");
-  ändraNamnBtn.innerHTML = "Ändra namn";
-  pokemonPlace.append(ändraNamnBtn);
 
-  input.placeholder = "Skriv in namnet här";
-
-  ändraNamnBtn.addEventListener("click", () => {
-    pokemonPlace.append(input);
-    input.focus();
-  });
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      pokeName.innerHTML = input.value;
-      input.remove();
-      input.value = "";
-    }
-  });
-
-  // draging(pokemonPlace)
   pokemonPlace.draggable = true;
 
   // ändra ordning knapp
