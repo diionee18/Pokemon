@@ -1,5 +1,6 @@
 import { lagSpelare } from "./lag.js";
 import { reservLag } from "./reservPoke.js";
+import { lagSpelareFörstaSidan } from "./lag.js";
 
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let reservWrapper = document.querySelector(".reservWrapper");
@@ -51,24 +52,21 @@ const displayPokemon = async (pokemon) => {
       reservLag(pokemon);
     }
   });
+  let tillagdNotis = document.createElement("p");
+  tillagdNotis.setAttribute("class", "spelare-tillagd");
+  tillagdNotis.innerHTML = "Pokémon är tillagd i ditt lag nu";
+  pokemonPlace.append(tillagdNotis);
 
   läggTill.addEventListener("click", () => {
-    läggTill.disabled = true;
-    notisTillagdSpelare();
+    tillagdNotis.style.visibility = "visible"
+    lagSpelareFörstaSidan()
+  
     setTimeout(() => {
-      läggTill.disabled = false;
-    }, 1000);
+      tillagdNotis.style.visibility = "hidden"
+    }, 2000);
   });
 
-  const notisTillagdSpelare = () => {
-    let tillagdNotis = document.createElement("p");
-    tillagdNotis.setAttribute("class", "spelare-tillagd");
-    tillagdNotis.innerHTML = "Pokémon är tillagd i ditt lag nu";
-    pokemonPlace.append(tillagdNotis);
-    setTimeout(() => {
-      tillagdNotis.remove();
-    }, 20000);
-  };
+
 };
 
 const mittLagPokemons = (pokemon) => {
@@ -179,8 +177,7 @@ const mittLagPokemons = (pokemon) => {
     });
   
     avbrytBytaNamn.addEventListener("click", () =>{
-      // input.style.display= "none"
-      // avbrytBytaNamn.style.display= "none"
+  
       input.remove()
       avbrytBytaNamn.remove()
     })
@@ -262,7 +259,7 @@ reservWrapper.addEventListener("drop", (e) => {
 
 
 
-
+lagSpelareFörstaSidan()
 
 
 export { displayPokemon };

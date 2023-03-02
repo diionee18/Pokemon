@@ -5,9 +5,9 @@
 }
 
 body{
-  /* background:  linear-gradient(-150deg, rgb(107, 3, 25) 0%, rgb(3, 3, 13) 20%, rgb(6, 84, 99) 100%); */
-  background-color: rgb(255, 255, 255);
-  
+  width: 100%;
+  height: 100vh;
+
 }
 
 
@@ -91,6 +91,7 @@ border: none;
 
 /* Här har vi notisen som kommer upp när man klickat på lägg till */
 .spelare-tillagd{
+  visibility: hidden;
   padding: 0.3em 0.5em;
   width: 150px;
   text-align: center;
@@ -123,10 +124,10 @@ border-radius: 10px;
 }
 
 .pokemon-container{
-  /* height: 390px; */
+
   width: 200px;
   padding: 2em 1em;
-  border: 2px solid #9F0D0D;
+  border: 2px solid rgb(83, 83, 83) ;
   border-radius: 20px;
   background:  linear-gradient(50deg, rgb(107, 3, 25) 5%, rgb(3, 3, 13) 35%, rgb(10, 155, 184) 100%);
   gap: 0.5em;
@@ -161,6 +162,13 @@ img{
 
 /*sida 2*/
 
+.hr-notis{
+  display: block;
+  border-width: 2px;
+  border-color: green;
+  margin-top: 0.2em;
+}
+
 .rubrik-lag{
   text-align: center;
   font-size: 28px;
@@ -194,7 +202,16 @@ img{
   font-weight: bold;
 }
 
-#minst-antal-spelare{
+#minst-antal-spelare {
+  display: inline-block;
+  text-align: center;
+  padding: 1em 1em;
+  width: 250px;
+}
+
+#minst-antal-spelare-förstasidan{
+  font-size: 18px;
+  margin-top: 1em;
   display: inline-block;
   text-align: center;
   padding: 1em 1em;
@@ -223,6 +240,7 @@ img{
 }
 
 .bekräftelse-div{
+
   display: none;
   margin: 0em 1em;
   padding: 1em 1em;
@@ -232,7 +250,7 @@ img{
   border-radius: 10px;
   font-size: 24px;
   background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
-  /* filter:  blur(10px); */
+  backdrop-filter:  blur(100px);
 
 
 }
@@ -355,5 +373,11 @@ hr{
     font-size: 24px;
     text-transform: uppercase;
   }
+
+  #minst-antal-spelare{
+     width: 500px;
+  }
+
+
 }
 
