@@ -240,19 +240,18 @@ img{
 }
 
 .bekräftelse-div{
-
+  width: 270px;
   display: none;
-  margin: 0em 1em;
+  margin: 0em 10em;
   padding: 1em 1em;
   text-align: center;
   position: absolute;
-  border: none;
+  border: 2px solid silver;
   border-radius: 10px;
   font-size: 24px;
   background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
-  backdrop-filter:  blur(100px);
-
-
+ 
+  
 }
 
 .bekräftelse-knapp, .avbryt-knapp{
@@ -375,9 +374,11 @@ hr{
   }
 
   #minst-antal-spelare{
-     width: 500px;
+    width: 500px;
   }
-
+  #minst-antal-spelare-förstasidan{
+    font-size: 24px;
+  }
 
 }
 
