@@ -1,6 +1,7 @@
 import { displayPokemon } from "./skapapoke.js";
 import { lagSpelare } from "./lag.js";
 
+
 let hittaPokeBtn = document.querySelector("#hitta-pokemon");
 let mittLagBtn = document.querySelector("#mitt-lag");
 let förstaSidan = document.querySelector("#sida-1");

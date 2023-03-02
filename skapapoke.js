@@ -67,7 +67,7 @@ const displayPokemon = async (pokemon) => {
     pokemonPlace.append(tillagdNotis);
     setTimeout(() => {
       tillagdNotis.remove();
-    }, 2000);
+    }, 20000);
   };
 };
 
@@ -75,6 +75,7 @@ const mittLagPokemons = (pokemon) => {
   let pokemonPlace = document.createElement("div");
   let pokeImg = document.createElement("img");
   let pokeName = document.createElement("h2");
+  pokeImg.draggable = false
 
   pokemonPlace.setAttribute("class", "pokemon-container");
   pokemonPlace.setAttribute(
@@ -212,9 +213,7 @@ const mittLagPokemons = (pokemon) => {
 
 document.addEventListener("dragstart", (e) => {
   e.dataTransfer.setData("text/plain", e.target.id);
-  console.log(e);
-  console.log("dragstart", e.target.id);
-});
+ });
 
 pokemonWrapper2.addEventListener("dragover", (e) => {
   e.preventDefault();
@@ -259,5 +258,11 @@ reservWrapper.addEventListener("drop", (e) => {
   e.dataTransfer.clearData();
   lagSpelare();
 });
+
+
+
+
+
+
 
 export { displayPokemon };
