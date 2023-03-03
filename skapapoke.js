@@ -5,7 +5,7 @@ import { lagSpelareFörstaSidan } from "./lag.js";
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let reservWrapper = document.querySelector(".reservWrapper");
 let pokemonWrapper = document.querySelector(".wrapper");
-let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis");
+
 
 const displayPokemon = async (pokemon) => {
   let pokemonPlace = document.createElement("div");
@@ -226,11 +226,14 @@ pokemonWrapper2.addEventListener("drop", (e) => {
   }
   const pokeCounter = document.querySelectorAll(
     ".wrapper2 .pokemon-container"
-  ).length;
-  if (pokeCounter < 3) {
-    pokemonWrapper2.appendChild(draggableElement);
-    e.dataTransfer.clearData();
-    lagSpelare();
+    ).length;
+    if (pokeCounter < 3) {
+      pokemonWrapper2.appendChild(draggableElement);
+      e.dataTransfer.clearData();
+      lagSpelare();
+    } else if (pokeCounter === 3){
+      btn.style.display = 'none';
+      // btn.remove()
   }
 });
 
@@ -239,13 +242,13 @@ reservWrapper.addEventListener("dragover", (e) => {
 });
 
 reservWrapper.addEventListener("drop", (e) => {
-  e.preventDefault();
+   e.preventDefault();
   const id = e.dataTransfer.getData("text/plain");
   const draggableElement = document.getElementById(id);
   
   let btn = draggableElement.querySelector('.höger');
   btn.style.display = 'none';
-
+  
 
   if (!draggableElement) {
     return;

@@ -22,11 +22,15 @@ förstaSidan.setAttribute("class","none")
 andraSidan.setAttribute("class","none")
 
 hittaPokeBtn.addEventListener("click", () => {
+  hittaPokeBtn.classList.add("active");
+  mittLagBtn.classList.remove("active")
   förstaSidan.style.display = "block";
   andraSidan.style.display = "none";
 });
 
 mittLagBtn.addEventListener("click", () => {
+  mittLagBtn.classList.add("active");
+  hittaPokeBtn.classList.remove("active")
   förstaSidan.style.display = "none";
   andraSidan.style.display = "block";
   lagSpelare()

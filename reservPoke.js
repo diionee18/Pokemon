@@ -2,8 +2,7 @@ import { lagSpelare } from "./lag.js";
 
 let pokemonWrapper2 = document.querySelector(".wrapper2");
 let reservWrapper = document.querySelector(".reservWrapper");
-let pokemonWrapper = document.querySelector(".wrapper");
-let spelareTIllagdNoits = document.querySelector(".spelaren-tillagd-notis");
+
 
 
 
@@ -116,14 +115,19 @@ const reservLag = (pokemon) => {
   });
 
   avbrytBytaNamn.addEventListener("click", () =>{
-    // input.style.display= "none"
-    // avbrytBytaNamn.style.display= "none"
     input.remove()
     avbrytBytaNamn.remove()
   })
   //Ändra namnet på pokemon slutar här
+  let pokeCounter = document.querySelectorAll(".wrapper2 .pokemon-container").length
+  // if(pokeCounter === 3){
+  //   pokemonPlace.draggable = false;
 
-   pokemonPlace.draggable = true;
+  // } if(pokeCounter === 2) {
+
+    pokemonPlace.draggable = true;
+  // }
+
   
    // ändra ordning knapp
    let högerKnapp = document.createElement("button");
@@ -138,7 +142,6 @@ const reservLag = (pokemon) => {
  
    function flyttaHöger() {
      if (pokemonPlace && pokemonPlace.previousElementSibling) {
-       console.log(pokemonPlace.previousElementSibling);
        pokemonWrapper2.insertBefore(
          pokemonPlace,
          pokemonPlace.previousElementSibling
