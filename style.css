@@ -335,9 +335,7 @@ hr{
 
 
 .active{
-  /* background-color: grey; */
   background:  linear-gradient(50deg,  rgb(10, 155, 184) 1%,rgb(104, 10, 10) 1%, rgb(10, 155, 184) 100%);
-  /* border-radius: 10px; */
 }
 
 
