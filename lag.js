@@ -9,7 +9,7 @@ const lagSpelare = () =>{
     antalSpelare.style.padding = "0em 2em"
     antalSpelare.style.margin = "0em 1em"
   }else{
-    antalSpelare.innerHTML = `<span class="lagets-spelare"> Du har ${pokeCounter} ordinare Pokémon <br>  </span> och du har <span class="lagets-spelare" > ${antalReserv} </span> i reserv, du kan lägga till fler. <hr class="hr-notis"> Du kan dra och släppa Pokémons. För att ändra positonen i huvudlaget så använder du knappen som finns i kortet `
+    antalSpelare.innerHTML = `<span class="lagets-spelare"> Ditt lag är komplett, du har ${pokeCounter} ordinare Pokémon <br>  </span> och du har <span class="lagets-spelare" > ${antalReserv} </span> i reserv, du kan lägga till fler. <hr class="hr-notis"> Du kan dra och släppa Pokémons. <br> För att ändra positonen i huvudlaget så använder du knappen som finns i kortet `
     antalSpelare.style.border = "solid green 5px";
   }
 }

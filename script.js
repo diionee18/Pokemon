@@ -40,6 +40,16 @@ const getPokemonData = async (query) => {
   const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
   const response = await fetch(url);
   if (response.status !== 200) {
+    let errorMeddelande = document.createElement('p')
+    errorMeddelande.innerHTML = "Ett problem har uppstått, kontrollera att du är uppkopplad mot internet. Testa igen senare."
+    errorMeddelande.setAttribute("id", "error-meddelande");
+    felMeddelande.append(errorMeddelande);
+    searchInput.addEventListener("keydown",(e) => {
+      errorMeddelande.remove();
+    },
+    { once: true }
+  );
+
     // Hantera fel här om det uppstår ett problem med att hämta data från API:et
     return;
   }
@@ -59,6 +69,7 @@ const getPokemonData = async (query) => {
     felMeddelande.append(pokeError);
     searchInput.addEventListener("keydown",(e) => {
         pokeError.remove();
+       
       },
       { once: true }
     );

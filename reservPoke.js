@@ -145,7 +145,7 @@ const reservLag = (pokemon) => {
        );
      }
    }
- 
+   pokeImg.draggable = false
   
 
   };

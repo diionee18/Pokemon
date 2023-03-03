@@ -45,7 +45,7 @@ const displayPokemon = async (pokemon) => {
     let pokeCounter = document.querySelectorAll(
       ".wrapper2 .pokemon-container"
     ).length;
-    console.log(pokeCounter);
+   
     if (pokeCounter < 3) {
       mittLagPokemons(pokemon);
     } else if (pokeCounter === 3) {
@@ -197,8 +197,7 @@ const mittLagPokemons = (pokemon) => {
 
   function flyttaHöger() {
     if (pokemonPlace && pokemonPlace.previousElementSibling) {
-      console.log(pokemonPlace.previousElementSibling);
-      pokemonWrapper2.insertBefore(
+          pokemonWrapper2.insertBefore(
         pokemonPlace,
         pokemonPlace.previousElementSibling
       );
@@ -247,7 +246,7 @@ reservWrapper.addEventListener("drop", (e) => {
   let btn = draggableElement.querySelector('.höger');
   btn.style.display = 'none';
 
-  console.log(btn);  
+
   if (!draggableElement) {
     return;
   }
