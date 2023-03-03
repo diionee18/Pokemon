@@ -56,8 +56,7 @@ const getPokemonData = async (query) => {
   
   const data = await response.json();
   allPokemons = data.results;
-  console.log(allPokemons);
-  const matchingPokemon = data.results.filter((pokemon) => {
+   const matchingPokemon = data.results.filter((pokemon) => {
     const name = pokemon.name.toLowerCase();
     return name.includes(query.toLowerCase());
   });
@@ -79,7 +78,6 @@ const getPokemonData = async (query) => {
   // Visa de matchande Pokemon
   pokemonWrapper.innerHTML = "";
   matchingPokemon.forEach(async (p) => {
-    console.log(p.url);
     let response = await fetch(p.url);
     if (response.status !== 200) {
       return;
