@@ -233,7 +233,6 @@ pokemonWrapper2.addEventListener("drop", (e) => {
       lagSpelare();
     } else if (pokeCounter === 3){
       btn.style.display = 'none';
-      // btn.remove()
   }
 });
 

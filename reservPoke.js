@@ -119,11 +119,6 @@ const reservLag = (pokemon) => {
     avbrytBytaNamn.remove()
   })
   //Ändra namnet på pokemon slutar här
-  let pokeCounter = document.querySelectorAll(".wrapper2 .pokemon-container").length
-  // if(pokeCounter === 3){
-  //   pokemonPlace.draggable = false;
-
-  // } if(pokeCounter === 2) {
 
     pokemonPlace.draggable = true;
   // }
